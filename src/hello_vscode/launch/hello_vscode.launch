@@ -1,0 +1,4 @@
+  <launch>
+    <node name="hello_vscode" pkg="hello_vscode" type="hello_vscode" output="screen" />
+    <node name="hello_debug" pkg="hello_debug" type="hello_debug" output="screen" />
+  </launch>

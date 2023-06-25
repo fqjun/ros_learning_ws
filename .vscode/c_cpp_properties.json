@@ -7,6 +7,7 @@
       },
       "includePath": [
         "/home/jun/cartographer_ws/install_isolated/include/**",
+        "/home/jun/ros_learning_ws/devel/include/**",
         "/opt/ros/noetic/include/**",
         "/usr/include/**"
       ],

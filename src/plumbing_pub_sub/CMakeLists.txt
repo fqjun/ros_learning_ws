@@ -134,7 +134,7 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 add_executable(demo_pub src/demo01_pub.cpp)
-add_executable(demo_sub src/demo02_sub.cpp)
+add_executable(demo_sub src/demo01_sub.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -154,6 +154,20 @@ target_link_libraries(demo_sub
   ${catkin_LIBRARIES}
 )
 
+add_executable(person_talker src/demo02_pub.cpp)
+add_executable(person_listener src/demo02_sub.cpp)
+
+
+add_dependencies(person_talker ${PROJECT_NAME}_generate_messages_cpp)
+add_dependencies(person_listener ${PROJECT_NAME}_generate_messages_cpp)
+
+
+target_link_libraries(person_talker
+  ${catkin_LIBRARIES}
+)
+target_link_libraries(person_listener
+  ${catkin_LIBRARIES}
+)
 #############
 ## Install ##
 #############
